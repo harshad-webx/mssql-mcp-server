@@ -85,7 +85,7 @@ export class QueryExecutor {
     // Additional security checks
     if (normalizedQuery.includes('--') || normalizedQuery.includes('/*')) {
       // Comments are allowed but let's log them for monitoring
-      console.log('Query contains comments, review for security:', query.substring(0, 200));
+      console.error('Query contains comments, review for security:', query.substring(0, 200));
     }
   }
   private removeComments(query: string): string {

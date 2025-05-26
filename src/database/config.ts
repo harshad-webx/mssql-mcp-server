@@ -65,7 +65,7 @@ export class DatabaseConnection {
     try {
       this.pool = new sql.ConnectionPool(this.config);
       await this.pool.connect();
-      console.log('Connected to MSSQL database');
+      console.error('Connected to MSSQL database');
     } catch (error) {
       console.error('Failed to connect to database:', error);
       throw new Error(`Database connection failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
@@ -76,7 +76,7 @@ export class DatabaseConnection {
     if (this.pool) {
       await this.pool.close();
       this.pool = null;
-      console.log('Disconnected from MSSQL database');
+      console.error('Disconnected from MSSQL database');
     }
   }
 
