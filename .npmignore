@@ -1,0 +1,61 @@
+# Source files (only publish compiled JS)
+src/
+tsconfig.json
+
+# Development files
+.env
+.env.local
+.env.development
+.env.test
+
+# Development dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build artifacts
+*.tsbuildinfo
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Git files
+.git/
+.gitignore
+
+# Docker files (not needed for npm package)
+Dockerfile
+docker-compose.yml
+
+# Documentation that's not needed in package
+BUILD_STATUS.md
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Test files (if you add them later)
+test/
+tests/
+__tests__/
+*.test.js
+*.test.ts
+*.spec.js
+*.spec.ts

@@ -1,23 +1,55 @@
 {
-  "name": "mssql-mcp-server",
+  "name": "@harshad-webx/mssql-mcp-server",
   "version": "1.0.0",
-  "description": "MCP Server for MSSQL database integration with schema discovery and query tools",
+  "description": "A comprehensive Model Context Protocol (MCP) server for Microsoft SQL Server databases with read-only access, schema discovery, and business intelligence tools",
   "main": "build/index.js",
   "type": "module",
+  "bin": {
+    "mssql-mcp-server": "build/index.js",
+    "harshad-mssql-mcp": "build/index.js"
+  },
+  "files": [
+    "build/**/*",
+    "README.md",
+    "LICENSE",
+    ".env.example"
+  ],
   "scripts": {
     "build": "tsc",
     "start": "node build/index.js",
     "dev": "tsx src/index.ts",
-    "watch": "tsc --watch"
+    "watch": "tsc --watch",
+    "prepublishOnly": "npm run build",
+    "postinstall": "echo 'Thank you for installing mssql-mcp-server! Please check the README.md for setup instructions.'"
   },
   "keywords": [
     "mcp",
     "mssql",
     "database",
-    "sql-server"
+    "sql-server",
+    "model-context-protocol",
+    "schema-discovery",
+    "business-intelligence",
+    "claude",
+    "ai-tools",
+    "typescript",
+    "read-only",
+    "query-execution"
   ],
-  "author": "Your Company",
+  "author": {
+    "name": "Harshad",
+    "email": "your-email@example.com",
+    "url": "https://github.com/harshad-webx"
+  },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/harshad-webx/mssql-mcp-server.git"
+  },
+  "homepage": "https://github.com/harshad-webx/mssql-mcp-server#readme",
+  "bugs": {
+    "url": "https://github.com/harshad-webx/mssql-mcp-server/issues"
+  },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0",
     "dotenv": "^16.5.0",
@@ -32,5 +64,8 @@
   },
   "engines": {
     "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
