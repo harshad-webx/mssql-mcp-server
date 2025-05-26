@@ -30,13 +30,25 @@ A comprehensive Model Context Protocol (MCP) server that provides secure, read-o
 
 ## 🚀 Quick Start
 
+### Installation
+
+#### Option 1: Install from npm (Recommended)
+```bash
+# Global installation
+npm install -g @harshad-webx/mssql-mcp-server
+
+# Or use without installing
+npx @harshad-webx/mssql-mcp-server
+```
+
+#### Option 2: Install from source
+
 ### Prerequisites
 
 - **Node.js 18+** - [Download here](https://nodejs.org/)
 - **TypeScript** - Installed automatically with dependencies
 - **Microsoft SQL Server** - Any version with TCP/IP enabled
 - **Database Access** - User account with SELECT permissions
-### 1. Installation
 
 ```bash
 # Clone the repository
@@ -87,6 +99,46 @@ You should see: `MSSQL MCP Server running on stdio`
 
 Add to your Claude Desktop MCP configuration (`%APPDATA%\Claude\claude_desktop_config.json` on Windows or `~/Library/Application Support/Claude/claude_desktop_config.json` on macOS):
 
+#### Option 1: Using npm global installation (Recommended)
+```json
+{
+  "mcpServers": {
+    "mssql": {
+      "command": "mssql-mcp-server",
+      "env": {
+        "DB_SERVER": "your-server.com",
+        "DB_DATABASE": "YourDatabase",
+        "DB_USERNAME": "your_username",
+        "DB_PASSWORD": "your_password",
+        "DB_PORT": "1433",
+        "DB_ENCRYPT": "true"
+      }
+    }
+  }
+}
+```
+
+#### Option 2: Using npx (no installation required)
+```json
+{
+  "mcpServers": {
+    "mssql": {
+      "command": "npx",
+      "args": ["@harshad-webx/mssql-mcp-server"],
+      "env": {
+        "DB_SERVER": "your-server.com",
+        "DB_DATABASE": "YourDatabase",
+        "DB_USERNAME": "your_username",
+        "DB_PASSWORD": "your_password",
+        "DB_PORT": "1433",
+        "DB_ENCRYPT": "true"
+      }
+    }
+  }
+}
+```
+
+#### Option 3: Using source installation
 ```json
 {
   "mcpServers": {
